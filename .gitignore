@@ -1,0 +1,21 @@
+mangosteen-web/.DS_Store
+mangosteen-web/node_modules
+mangosteen-web/dist
+
+# local env files
+mangosteen-web/.env.local
+mangosteen-web/.env.*.local
+
+# Log files
+mangosteen-web/npm-debug.log*
+mangosteen-web/yarn-debug.log*
+mangosteen-web/yarn-error.log*
+
+# Editor directories and files
+*/.idea
+*/.vscode
+mangosteen-web/*.suo
+mangosteen-web/*.ntvs*
+mangosteen-web/*.njsproj
+mangosteen-web/*.sln
+mangosteen-web/*.sw?
