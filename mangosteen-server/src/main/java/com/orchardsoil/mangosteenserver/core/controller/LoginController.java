@@ -1,9 +1,11 @@
 package com.orchardsoil.mangosteenserver.core.controller;
 
+import com.google.code.kaptcha.impl.DefaultKaptcha;
 import com.orchardsoil.mangosteenserver.common.authentication.JWTToken;
 import com.orchardsoil.mangosteenserver.common.authentication.JWTUtil;
 import com.orchardsoil.mangosteenserver.common.controller.BaseController;
 import com.orchardsoil.mangosteenserver.common.entity.MangosteenResponse;
+import com.orchardsoil.mangosteenserver.common.exception.MangosteenException;
 import com.orchardsoil.mangosteenserver.common.properties.MangosteenProperties;
 import com.orchardsoil.mangosteenserver.common.utils.BaseUtil;
 import com.orchardsoil.mangosteenserver.common.utils.DateUtil;
@@ -18,9 +20,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.imageio.ImageIO;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.constraints.NotBlank;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
@@ -34,11 +40,25 @@ public class LoginController {
   @Autowired
   private MangosteenProperties properties;
 
+  @Autowired
+  DefaultKaptcha defaultKaptcha;
+
+
   @PostMapping("/login")
 //  @Limit(key = "login", period = 60, count = 20, name = "登录接口", prefix = "limit")
   public MangosteenResponse login(
       @NotBlank(message = "{required}") String username,
-      @NotBlank(message = "{required}") String password, HttpServletRequest request) throws Exception {
+      @NotBlank(message = "{required}") String password,
+      @NotBlank(message = "{required}") String vrifyCode,
+      HttpServletRequest request) throws Exception {
+    // 从session 中获取验证码
+    String verificationCodeIn = (String) request.getSession().getAttribute("vrifyCode");
+    // 删除
+    request.getSession().removeAttribute("vrifyCode");
+    // 判断验证码是否正确
+    if (StringUtils.isEmpty(vrifyCode) || StringUtils.isEmpty(verificationCodeIn) || !verificationCodeIn.equals(vrifyCode)) {
+      throw new MangosteenException("验证码错误，或已失效");
+    }
     username = StringUtils.lowerCase(username);
     password = MD5Util.encrypt(username, password);
 
@@ -46,9 +66,9 @@ public class LoginController {
     User user = this.userService.findByName(username);
 
     if (user == null)
-      throw new Exception(errorMessage);
+      throw new MangosteenException(errorMessage);
     if (!StringUtils.equals(user.getPassword(), password))
-      throw new Exception(errorMessage);
+      throw new MangosteenException(errorMessage);
 //    if (User.STATUS_LOCK.equals(user.getStatus()))
 //      throw new FebsException("账号已被锁定,请联系管理员！");
 
@@ -62,18 +82,50 @@ public class LoginController {
     Map<String, Object> userInfo = this.generateUserInfo(jwtToken, user);
     return new MangosteenResponse().message("认证成功").data(userInfo);
   }
+
   /**
    * 验证码
    *
-   * @param request
-   * @param response
+   * @param httpServletRequest
+   * @param httpServletResponse
    * @throws Exception
    */
   @GetMapping("images/captcha")
-  public void captcha(HttpServletRequest request, HttpServletResponse response) throws Exception {
+  public void captcha(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
+      throws Exception {
+    byte[] captchaChallengeAsJpeg = null;
+    ByteArrayOutputStream jpegOutputStream = new ByteArrayOutputStream();
+    try {
+      // 生产验证码字符串并保存到session中
+      String createText = defaultKaptcha.createText();
+      httpServletRequest.getSession().setAttribute("vrifyCode", createText);
+      // 使用生成的验证码字符串返回一个BufferedImage对象并转为byte写入到byte数组中
+      BufferedImage challenge = defaultKaptcha.createImage(createText);
+      ImageIO.write(challenge, "jpg", jpegOutputStream);
+    } catch (IllegalArgumentException e) {
+      httpServletResponse.sendError(HttpServletResponse.SC_NOT_FOUND);
+      return;
+    }
 
+    // 定义response输出类型为image/jpeg类型，使用response输出流输出图片的byte数组
+    captchaChallengeAsJpeg = jpegOutputStream.toByteArray();
+    httpServletResponse.setHeader("Cache-Control", "no-store");
+    httpServletResponse.setHeader("Pragma", "no-cache");
+    httpServletResponse.setDateHeader("Expires", 0);
+    httpServletResponse.setContentType("image/jpeg");
+    ServletOutputStream responseOutputStream = httpServletResponse.getOutputStream();
+    responseOutputStream.write(captchaChallengeAsJpeg);
+    responseOutputStream.flush();
+    responseOutputStream.close();
   }
 
+  /**
+   * 用户注册
+   *
+   * @param username
+   * @param password
+   * @throws Exception
+   */
   @PostMapping("regist")
   public void regist(
       @NotBlank(message = "{required}") String username,
@@ -98,7 +150,6 @@ public class LoginController {
     Map<String, Object> userInfo = new HashMap<>();
     userInfo.put("token", token.getToken());
     userInfo.put("exipreTime", token.getExipreAt());
-
     user.setPassword("it's a secret");
     userInfo.put("user", user);
     return userInfo;
