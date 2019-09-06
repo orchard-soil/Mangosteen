@@ -1,5 +1,6 @@
 package com.orchardsoil.mangosteenserver.common.authentication;
 
+import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.orchardsoil.mangosteenserver.common.properties.MangosteenProperties;
 import com.orchardsoil.mangosteenserver.common.utils.BaseUtil;
@@ -22,6 +23,7 @@ import java.io.PrintWriter;
 
 @Slf4j
 public class JWTFilter extends BasicHttpAuthenticationFilter {
+
   private static final String TOKEN = "Authentication";
 
   private AntPathMatcher pathMatcher = new AntPathMatcher();

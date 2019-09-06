@@ -3,6 +3,9 @@ package com.orchardsoil.mangosteenserver.common.authentication;
 import com.orchardsoil.mangosteenserver.common.utils.BaseUtil;
 import com.orchardsoil.mangosteenserver.common.utils.HttpContextUtil;
 import com.orchardsoil.mangosteenserver.core.model.User;
+import com.orchardsoil.mangosteenserver.core.service.UserService;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -10,16 +13,21 @@ import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Set;
 
 /**
  * 自定义授权
  */
+@Slf4j
 public class ShiroRealm extends AuthorizingRealm {
+
+  @Autowired
+  private UserService userService;
+
+
   @Override
   public boolean supports(AuthenticationToken token) {
     return token instanceof JWTToken;
@@ -57,6 +65,8 @@ public class ShiroRealm extends AuthorizingRealm {
    */
   @Override
   protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
+
+    log.info("AuthenticationInfo");
     // 这里的 token是从 JWTFilter 的 executeLogin 方法传递过来的，已经经过了解密
     String token = (String) authenticationToken.getCredentials();
 
@@ -80,7 +90,7 @@ public class ShiroRealm extends AuthorizingRealm {
       throw new AuthenticationException("token校验不通过");
 
     // 通过用户名查询用户信息
-    User user = new User();
+    User user = this.userService.findByName(username);
 
     if (user == null)
       throw new AuthenticationException("用户名或密码错误");
