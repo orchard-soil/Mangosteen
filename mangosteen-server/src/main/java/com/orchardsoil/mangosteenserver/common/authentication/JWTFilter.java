@@ -33,8 +33,9 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
     HttpServletRequest httpServletRequest = (HttpServletRequest) request;
     MangosteenProperties mangosteenProperties = SpringContextUtil.getBean(MangosteenProperties.class);
     //从配置文件中获取无需验证的url
+//    log.info("====无需验证  {}",mangosteenProperties.getShiro().getAnonUrl());
     String[] anonUrl = StringUtils.splitByWholeSeparatorPreserveAllTokens(mangosteenProperties.getShiro().getAnonUrl(), StringPool.COMMA);
-    boolean match = true;
+    boolean match = false;
       for (String u : anonUrl) {
         if (pathMatcher.match(u, httpServletRequest.getRequestURI()))
           match = true;

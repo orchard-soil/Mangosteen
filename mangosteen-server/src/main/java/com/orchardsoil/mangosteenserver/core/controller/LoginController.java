@@ -15,6 +15,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -34,6 +35,7 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
+@Slf4j
 @Validated
 @Api(description = "用户管理")
 @RestController
@@ -49,11 +51,19 @@ public class LoginController {
 
 
   @PostMapping("/login")
+  @ApiOperation(value = "用户登录", notes = " 用户登录 ")
+  @ApiImplicitParams(
+      {
+          @ApiImplicitParam(name = "username", value = "用户名", required = true, dataType = "String"),
+          @ApiImplicitParam(name = "password", value = "密码", required = true, dataType = "String"),
+          @ApiImplicitParam(name = "vrifyCode", value = "验证码", required = true, dataType = "String")
+      }
+  )
 //  @Limit(key = "login", period = 60, count = 20, name = "登录接口", prefix = "limit")
   public MangosteenResponse login(
-      @NotBlank(message = "{required}") String username,
-      @NotBlank(message = "{required}") String password,
-      @NotBlank(message = "{required}") String vrifyCode,
+      @RequestParam(value = "username") String username,
+      @RequestParam(value = "password") String password,
+      @RequestParam(value = "vrifyCode") String vrifyCode,
       HttpServletRequest request) throws Exception {
     // 从session 中获取验证码
     String verificationCodeIn = (String) request.getSession().getAttribute("vrifyCode");
@@ -76,8 +86,9 @@ public class LoginController {
 //    if (User.STATUS_LOCK.equals(user.getStatus()))
 //      throw new FebsException("账号已被锁定,请联系管理员！");
 
-
+    // 设置Token 到 JWT
     String token = BaseUtil.encryptToken(JWTUtil.sign(username, password));
+
     LocalDateTime expireTime = LocalDateTime.now().plusSeconds(properties.getShiro().getJwtTimeOut());
     String expireTimeStr = DateUtil.formatFullTime(expireTime);
     JWTToken jwtToken = new JWTToken(token, expireTimeStr);
@@ -95,7 +106,7 @@ public class LoginController {
    * @throws Exception
    */
   @ApiOperation(value = "获取验证码", notes = " 获取登录验证码 ")
-  @GetMapping(value = "images/captcha",produces = "image/jpg")
+  @GetMapping(value = "images/captcha", produces = "image/jpg")
   public void captcha(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
       throws Exception {
     byte[] captchaChallengeAsJpeg = null;
