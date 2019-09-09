@@ -16,6 +16,7 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.catalina.startup.UserConfig;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -34,6 +35,7 @@ import java.io.ByteArrayOutputStream;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 @Slf4j
 @Validated
@@ -172,6 +174,16 @@ public class LoginController {
     Map<String, Object> userInfo = new HashMap<>();
     userInfo.put("token", token.getToken());
     userInfo.put("exipreTime", token.getExipreAt());
+
+//    Set<String> roles = this.userManager.getUserRoles(username);
+//    userInfo.put("roles", roles);
+//
+//    Set<String> permissions = this.userManager.getUserPermissions(username);
+//    userInfo.put("permissions", permissions);
+//
+//    UserConfig userConfig = this.userManager.getUserConfig(String.valueOf(user.getUserId()));
+//    userInfo.put("config", userConfig);
+
     user.setPassword("it's a secret");
     userInfo.put("user", user);
     return userInfo;

@@ -40,6 +40,7 @@ public class User implements Serializable {
 
   // 默认密码
   public static final String DEFAULT_PASSWORD = "1234qwer";
+  private static final long serialVersionUID = -628336023974472461L;
 
   @TableId(value = "USER_ID", type = IdType.AUTO)
   private Long userId;
