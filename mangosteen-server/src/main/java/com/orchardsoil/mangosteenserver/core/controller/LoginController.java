@@ -63,9 +63,9 @@ public class LoginController {
   )
 //  @Limit(key = "login", period = 60, count = 20, name = "登录接口", prefix = "limit")
   public MangosteenResponse login(
-      @RequestParam(value = "username") String username,
-      @RequestParam(value = "password") String password,
-      @RequestParam(value = "vrifyCode") String vrifyCode,
+      @NotBlank(message = "{required}") @RequestParam(value = "username") String username,
+      @NotBlank(message = "{required}") @RequestParam(value = "password") String password,
+      @NotBlank(message = "{required}") @RequestParam(value = "vrifyCode") String vrifyCode,
       HttpServletRequest request) throws Exception {
     // 从session 中获取验证码
     String verificationCodeIn = (String) request.getSession().getAttribute("vrifyCode");
@@ -151,8 +151,8 @@ public class LoginController {
   })
   @PostMapping("regist")
   public MangosteenResponse regist(
-      @RequestParam(value = "username", required = true) String username,
-      @RequestParam(value = "password", required = true) String password) throws Exception {
+      @NotBlank(message = "{required}") @RequestParam(value = "username") String username,
+      @NotBlank(message = "{required}") @RequestParam(value = "password") String password) throws Exception {
     this.userService.regist(username, password);
     return new MangosteenResponse().message("用户注册成功").success();
   }
