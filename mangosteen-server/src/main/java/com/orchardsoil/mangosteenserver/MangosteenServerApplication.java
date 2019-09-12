@@ -16,7 +16,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableAsync
 //排除 原生Druid的快速配置类
 @SpringBootApplication(exclude = DruidDataSourceAutoConfigure.class)
-@MapperScan(" com.orchardsoil.mangosteenserver.core.mapper")
 public class MangosteenServerApplication {
 
   public static void main(String[] args) {

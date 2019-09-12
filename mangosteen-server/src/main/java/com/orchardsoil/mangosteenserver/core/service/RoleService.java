@@ -7,4 +7,6 @@ import com.orchardsoil.mangosteenserver.core.model.Role;
 
 public interface RoleService extends IService<Role> {
   IPage<Role> findRoles(Role role, QueryRequest request);
+
+  void creatRole(Role role);
 }

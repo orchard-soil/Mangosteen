@@ -151,8 +151,8 @@ public class LoginController {
   })
   @PostMapping("regist")
   public MangosteenResponse regist(
-      @NotBlank(message = "{required}") @RequestParam(value = "username") String username,
-      @NotBlank(message = "{required}") @RequestParam(value = "password") String password) throws Exception {
+      @NotBlank(message = "账号不能为空") @RequestParam(value = "username") String username,
+      @NotBlank(message = "密码不能为空") @RequestParam(value = "password") String password) throws Exception {
     this.userService.regist(username, password);
     return new MangosteenResponse().message("用户注册成功").success();
   }

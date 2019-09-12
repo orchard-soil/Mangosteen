@@ -17,6 +17,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
+
 @Slf4j
 @Service("RoleService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)
@@ -44,5 +46,11 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements Ro
       log.error("获取角色信息失败", e);
       return null;
     }
+  }
+
+  @Override
+  public void creatRole(Role role) {
+    role.setCreateTime(new Date());
+    this.save(role);
   }
 }

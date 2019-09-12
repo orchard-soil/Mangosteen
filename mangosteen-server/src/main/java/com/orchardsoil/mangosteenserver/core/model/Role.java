@@ -37,7 +37,7 @@ public class Role implements Serializable {
 
   @ExcelField(value = "修改时间", writeConverter = TimeConverter.class)
   private Date modifyTime;
-
+  // transient 表示数据库中没有这个字段
   private transient String createTimeFrom;
   private transient String createTimeTo;
   private transient String menuId;
