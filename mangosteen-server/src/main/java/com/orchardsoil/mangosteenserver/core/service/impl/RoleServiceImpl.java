@@ -18,6 +18,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
+import java.util.List;
 
 @Slf4j
 @Service("RoleService")
@@ -52,5 +53,10 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements Ro
   public void creatRole(Role role) {
     role.setCreateTime(new Date());
     this.save(role);
+  }
+
+  @Override
+  public List<Role> findUserRole(String userName) {
+    return this.baseMapper.findUserRole(userName);
   }
 }

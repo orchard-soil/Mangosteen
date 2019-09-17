@@ -7,9 +7,10 @@ import com.orchardsoil.mangosteenserver.core.service.MenuService;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 @Service("MenuService")
-public class MenuServiceImpl  extends ServiceImpl<MenuMapper, Menu> implements MenuService {
+public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements MenuService {
   @Override
   public void creatMenu(Menu menu) {
     // 创建时间
@@ -19,4 +20,10 @@ public class MenuServiceImpl  extends ServiceImpl<MenuMapper, Menu> implements M
     //
     this.save(menu);
   }
+
+  @Override
+  public List<Menu> findUserPermissions(String username) {
+    return this.baseMapper.findUserPermissions(username);
+  }
+
 }

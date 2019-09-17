@@ -24,6 +24,12 @@ spring:
           password: ENC(mnl1c7Zuy0qzQuu9pvFDWOR/kHfIQqqyXgiVaMbUX947adR6VjWOVBUIVwCtbof+uFPsxgII2aI8pnetCwMgYg==)
           driver-class-name: com.mysql.cj.jdbc.Driver
           url: jdbc:mysql://127.0.0.1:3306/mangosteen?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+        online:
+          username: root
+          password: mangosteen
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://104.243.26.146:3306/mangosteen?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8

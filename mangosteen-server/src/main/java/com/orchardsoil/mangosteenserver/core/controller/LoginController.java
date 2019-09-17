@@ -1,14 +1,18 @@
 package com.orchardsoil.mangosteenserver.core.controller;
 
+import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.google.code.kaptcha.impl.DefaultKaptcha;
 import com.orchardsoil.mangosteenserver.common.authentication.JWTToken;
 import com.orchardsoil.mangosteenserver.common.authentication.JWTUtil;
+import com.orchardsoil.mangosteenserver.common.domain.SystemConstant;
 import com.orchardsoil.mangosteenserver.common.entity.MangosteenResponse;
 import com.orchardsoil.mangosteenserver.common.exception.MangosteenException;
 import com.orchardsoil.mangosteenserver.common.properties.MangosteenProperties;
 import com.orchardsoil.mangosteenserver.common.utils.BaseUtil;
 import com.orchardsoil.mangosteenserver.common.utils.DateUtil;
 import com.orchardsoil.mangosteenserver.common.utils.MD5Util;
+import com.orchardsoil.mangosteenserver.core.manager.UserManager;
+import com.orchardsoil.mangosteenserver.core.mapper.UserMapper;
 import com.orchardsoil.mangosteenserver.core.model.User;
 import com.orchardsoil.mangosteenserver.core.service.UserService;
 import io.swagger.annotations.Api;
@@ -44,6 +48,8 @@ import java.util.Set;
 public class LoginController {
   @Autowired
   private UserService userService;
+  @Autowired
+  private UserManager userManager;
 
   @Autowired
   private MangosteenProperties properties;
@@ -72,9 +78,9 @@ public class LoginController {
     // 删除
     request.getSession().removeAttribute("vrifyCode");
     // 判断验证码是否正确
-    if (StringUtils.isEmpty(vrifyCode) || StringUtils.isEmpty(verificationCodeIn) || !verificationCodeIn.equals(vrifyCode)) {
-      throw new MangosteenException("验证码错误，或已失效");
-    }
+//    if (StringUtils.isEmpty(vrifyCode) || StringUtils.isEmpty(verificationCodeIn) || !verificationCodeIn.equals(vrifyCode)) {
+//      throw new MangosteenException("验证码错误，或已失效");
+//    }
     username = StringUtils.lowerCase(username);
     password = MD5Util.encrypt(username, password);
 
@@ -157,6 +163,24 @@ public class LoginController {
     return new MangosteenResponse().message("用户注册成功").success();
   }
 
+  private String saveTokenToRedis(User user, JWTToken token, HttpServletRequest request) throws Exception {
+//    String ip = IPUtil.getIpAddr(request);
+
+//    // 构建在线用户
+//    ActiveUser activeUser = new ActiveUser();
+//    activeUser.setUsername(user.getUsername());
+//    activeUser.setIp(ip);
+//    activeUser.setToken(token.getToken());
+//    activeUser.setLoginAddress(AddressUtil.getCityInfo(ip));
+
+    // zset 存储登录用户，score 为过期时间戳
+//    this.redisService.zadd(SystemConstant.ACTIVE_USERS_ZSET_PREFIX, Double.valueOf(token.getExipreAt()), mapper.writeValueAsString(activeUser));
+    // redis 中存储这个加密 token，key = 前缀 + 加密 token + .ip
+//    this.redisService.set(SystemConstant.TOKEN_CACHE_PREFIX + token.getToken() + StringPool.DOT + ip, token.getToken(), properties.getShiro().getJwtTimeOut() * 1000);
+
+//    return activeUser.getId();
+  }
+
   /**
    * 生成前端需要的用户信息，包括：
    * 1. token
@@ -175,11 +199,11 @@ public class LoginController {
     userInfo.put("token", token.getToken());
     userInfo.put("exipreTime", token.getExipreAt());
 
-//    Set<String> roles = this.userManager.getUserRoles(username);
-//    userInfo.put("roles", roles);
+    Set<String> roles = this.userManager.getUserRoles(username);
+    userInfo.put("roles", roles);
 //
-//    Set<String> permissions = this.userManager.getUserPermissions(username);
-//    userInfo.put("permissions", permissions);
+    Set<String> permissions = this.userManager.getUserPermissions(username);
+    userInfo.put("permissions", permissions);
 //
 //    UserConfig userConfig = this.userManager.getUserConfig(String.valueOf(user.getUserId()));
 //    userInfo.put("config", userConfig);

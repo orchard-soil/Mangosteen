@@ -57,3 +57,552 @@
 SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'test');
 2019-09-12 12:10:53.524 febs [http-nio-80-exec-10] INFO  c.o.m.common.authentication.JWTUtil - token is valid
 2019-09-12 12:10:53.735 febs [http-nio-80-exec-10] INFO  c.o.m.core.controller.MenuController - 添加了菜单
+2019-09-12 14:07:17.949 febs [Thread-20] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-09-12 14:07:17.970 febs [Thread-20] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-12 14:07:18.387 febs [Thread-20] INFO  c.b.d.d.DynamicRoutingDataSource - closing dynamicDatasource  ing....
+2019-09-12 14:07:18.437 febs [Thread-20] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2019-09-12 14:41:10.107 febs [main] INFO  c.o.m.MangosteenServerApplication - Starting MangosteenServerApplication on liuxindeMacBook-Pro.local with PID 3821 (/Users/liuxin/me/Mangosteen/mangosteen-server/target/classes started by liuxin in /Users/liuxin/me/Mangosteen/mangosteen-server)
+2019-09-12 14:41:10.117 febs [main] INFO  c.o.m.MangosteenServerApplication - No active profile set, falling back to default profiles: default
+2019-09-12 14:41:12.888 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-09-12 14:41:12.896 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-12 14:41:13.026 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 76ms. Found 0 repository interfaces.
+2019-09-12 14:41:14.453 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:41:14.462 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$88af41c4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:41:14.476 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:41:14.482 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:41:14.497 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1f20d0f3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:41:14.531 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.orchardsoil.mangosteenserver.common.authentication.ShiroConfig$$EnhancerBySpringCGLIB$$9074f569] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:41:14.594 febs [main] INFO  c.o.m.c.authentication.ShiroConfig - 配置 SecurityManager，并注入 shiroRealm
+2019-09-12 14:41:14.767 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:41:14.781 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatisPlusConfig' of type [com.orchardsoil.mangosteenserver.common.config.MybatisPlusConfig$$EnhancerBySpringCGLIB$$5ed09f0f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:41:14.791 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'paginationInterceptor' of type [com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:41:14.811 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$5ce93d8d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:41:14.854 febs [main] INFO  c.b.d.d.DynamicDataSourceCreator - 动态数据源-检测到druid存在,如配置中未指定type,druid会默认配置
+2019-09-12 14:41:14.855 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceCreator' of type [com.baomidou.dynamic.datasource.DynamicDataSourceCreator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:41:14.857 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceProvider' of type [com.baomidou.dynamic.datasource.provider.YmlDynamicDataSourceProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:41:14.864 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-检测到并开启了p6spy
+2019-09-12 14:41:15.027 febs [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1,primary} inited
+2019-09-12 14:41:15.035 febs [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2,online} inited
+2019-09-12 14:41:15.036 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 初始共加载 2 个数据源
+2019-09-12 14:41:15.036 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-加载 online 成功
+2019-09-12 14:41:15.036 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-加载 primary 成功
+2019-09-12 14:41:15.036 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 当前的默认数据源是单数据源，数据源名为 online
+2019-09-12 14:41:15.037 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.baomidou.dynamic.datasource.DynamicRoutingDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:41:15.053 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:41:15.065 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:41:16.159 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:41:16.195 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:41:16.203 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:41:16.220 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [com.sun.proxy.$Proxy111] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:41:16.222 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userService' of type [com.orchardsoil.mangosteenserver.core.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:41:16.325 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroRealm' of type [com.orchardsoil.mangosteenserver.common.authentication.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:41:16.336 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:41:16.360 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:41:17.170 febs [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 80 (http)
+2019-09-12 14:41:17.232 febs [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2019-09-12 14:41:17.246 febs [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-09-12 14:41:17.246 febs [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-09-12 14:41:17.583 febs [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-09-12 14:41:17.583 febs [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 7350 ms
+2019-09-12 14:41:20.302 febs [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-09-12 14:41:20.570 febs [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-09-12 14:41:20.991 febs [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-12 14:41:21.938 febs [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2019-09-12 14:41:22.136 febs [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2019-09-12 14:41:22.184 febs [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2019-09-12 14:41:22.252 febs [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2019-09-12 14:41:22.680 febs [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+2019-09-12 14:41:22.731 febs [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 80 (http) with context path ''
+2019-09-12 14:41:22.737 febs [main] INFO  c.o.m.MangosteenServerApplication - Started MangosteenServerApplication in 17.094 seconds (JVM running for 32.319)
+2019-09-12 14:43:11.155 febs [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-12 14:43:11.156 febs [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-09-12 14:43:11.175 febs [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 19 ms
+2019-09-12 14:43:25.408 febs [http-nio-80-exec-10] INFO  c.o.m.c.authentication.ShiroRealm -  Token 验证 :test
+2019-09-12 14:43:28.957 febs [http-nio-80-exec-10] INFO  p6spy - 2019-09-12 14:43:28 | 耗时 216 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'test');
+2019-09-12 14:43:29.012 febs [http-nio-80-exec-10] INFO  c.o.m.common.authentication.JWTUtil - token is valid
+2019-09-12 14:43:29.542 febs [http-nio-80-exec-10] INFO  p6spy - 2019-09-12 14:43:29 | 耗时 220 ms | SQL 语句：
+SELECT COUNT(1) FROM t_role;
+2019-09-12 14:43:57.941 febs [http-nio-80-exec-4] INFO  c.o.m.c.authentication.ShiroRealm -  Token 验证 :test
+2019-09-12 14:43:58.138 febs [http-nio-80-exec-4] INFO  p6spy - 2019-09-12 14:43:58 | 耗时 185 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'test');
+2019-09-12 14:43:58.142 febs [http-nio-80-exec-4] INFO  c.o.m.common.authentication.JWTUtil - token is valid
+2019-09-12 14:43:58.362 febs [http-nio-80-exec-4] INFO  p6spy - 2019-09-12 14:43:58 | 耗时 183 ms | SQL 语句：
+SELECT COUNT(1) FROM t_role;
+2019-09-12 14:44:20.908 febs [Thread-20] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-09-12 14:44:20.913 febs [Thread-20] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-12 14:44:20.960 febs [Thread-20] INFO  c.b.d.d.DynamicRoutingDataSource - closing dynamicDatasource  ing....
+2019-09-12 14:44:20.982 febs [Thread-20] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} closed
+2019-09-12 14:44:20.982 febs [Thread-20] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2019-09-12 14:44:36.090 febs [main] INFO  c.o.m.MangosteenServerApplication - Starting MangosteenServerApplication on liuxindeMacBook-Pro.local with PID 5031 (/Users/liuxin/me/Mangosteen/mangosteen-server/target/classes started by liuxin in /Users/liuxin/me/Mangosteen/mangosteen-server)
+2019-09-12 14:44:36.096 febs [main] INFO  c.o.m.MangosteenServerApplication - No active profile set, falling back to default profiles: default
+2019-09-12 14:44:39.234 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-09-12 14:44:39.239 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-12 14:44:39.306 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44ms. Found 0 repository interfaces.
+2019-09-12 14:44:40.612 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:44:40.619 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$f32030e5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:44:40.632 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:44:40.635 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:44:40.647 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8991c014] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:44:40.685 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.orchardsoil.mangosteenserver.common.authentication.ShiroConfig$$EnhancerBySpringCGLIB$$fae5e48a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:44:40.724 febs [main] INFO  c.o.m.c.authentication.ShiroConfig - 配置 SecurityManager，并注入 shiroRealm
+2019-09-12 14:44:40.814 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:44:40.827 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatisPlusConfig' of type [com.orchardsoil.mangosteenserver.common.config.MybatisPlusConfig$$EnhancerBySpringCGLIB$$c9418e30] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:44:40.836 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'paginationInterceptor' of type [com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:44:40.853 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$c75a2cae] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:44:40.882 febs [main] INFO  c.b.d.d.DynamicDataSourceCreator - 动态数据源-检测到druid存在,如配置中未指定type,druid会默认配置
+2019-09-12 14:44:40.883 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceCreator' of type [com.baomidou.dynamic.datasource.DynamicDataSourceCreator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:44:40.885 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceProvider' of type [com.baomidou.dynamic.datasource.provider.YmlDynamicDataSourceProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:44:40.889 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-检测到并开启了p6spy
+2019-09-12 14:44:40.962 febs [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1,primary} inited
+2019-09-12 14:44:40.968 febs [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2,online} inited
+2019-09-12 14:44:40.968 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 初始共加载 2 个数据源
+2019-09-12 14:44:40.968 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-加载 online 成功
+2019-09-12 14:44:40.968 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-加载 primary 成功
+2019-09-12 14:44:40.968 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 当前的默认数据源是单数据源，数据源名为 primary
+2019-09-12 14:44:40.969 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.baomidou.dynamic.datasource.DynamicRoutingDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:44:40.980 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:44:40.989 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:44:41.457 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:44:41.474 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:44:41.477 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:44:41.486 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [com.sun.proxy.$Proxy111] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:44:41.487 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userService' of type [com.orchardsoil.mangosteenserver.core.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:44:41.599 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroRealm' of type [com.orchardsoil.mangosteenserver.common.authentication.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:44:41.609 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:44:41.627 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 14:44:42.230 febs [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 80 (http)
+2019-09-12 14:44:42.255 febs [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2019-09-12 14:44:42.268 febs [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-09-12 14:44:42.268 febs [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-09-12 14:44:42.462 febs [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-09-12 14:44:42.463 febs [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 6218 ms
+2019-09-12 14:44:44.728 febs [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-09-12 14:44:45.017 febs [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-09-12 14:44:45.364 febs [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-12 14:44:46.231 febs [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2019-09-12 14:44:46.444 febs [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2019-09-12 14:44:46.480 febs [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2019-09-12 14:44:46.533 febs [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2019-09-12 14:44:46.915 febs [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+2019-09-12 14:44:46.979 febs [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 80 (http) with context path ''
+2019-09-12 14:44:46.990 febs [main] INFO  c.o.m.MangosteenServerApplication - Started MangosteenServerApplication in 13.281 seconds (JVM running for 24.963)
+2019-09-12 14:44:51.949 febs [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-12 14:44:51.949 febs [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-09-12 14:44:51.974 febs [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 25 ms
+2019-09-12 14:44:52.174 febs [http-nio-80-exec-1] INFO  c.o.m.c.authentication.ShiroRealm -  Token 验证 :test
+2019-09-12 14:44:52.872 febs [http-nio-80-exec-1] INFO  p6spy - 2019-09-12 14:44:52 | 耗时 32 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'test');
+2019-09-12 14:44:52.902 febs [http-nio-80-exec-1] INFO  c.o.m.common.authentication.JWTUtil - token is valid
+2019-09-12 14:44:53.412 febs [http-nio-80-exec-1] INFO  p6spy - 2019-09-12 14:44:53 | 耗时 4 ms | SQL 语句：
+SELECT COUNT(1) FROM t_role;
+2019-09-12 14:44:53.433 febs [http-nio-80-exec-1] INFO  p6spy - 2019-09-12 14:44:53 | 耗时 0 ms | SQL 语句：
+SELECT ROLE_ID,modify_time,create_time,role_name,remark FROM t_role LIMIT 0,10;
+2019-09-12 14:45:02.397 febs [http-nio-80-exec-2] INFO  c.o.m.c.authentication.ShiroRealm -  Token 验证 :test
+2019-09-12 14:45:02.427 febs [http-nio-80-exec-2] INFO  p6spy - 2019-09-12 14:45:02 | 耗时 3 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'test');
+2019-09-12 14:45:02.435 febs [http-nio-80-exec-2] INFO  c.o.m.common.authentication.JWTUtil - token is valid
+2019-09-12 14:45:02.469 febs [http-nio-80-exec-2] INFO  p6spy - 2019-09-12 14:45:02 | 耗时 3 ms | SQL 语句：
+SELECT COUNT(1) FROM t_role;
+2019-09-12 14:45:02.476 febs [http-nio-80-exec-2] INFO  p6spy - 2019-09-12 14:45:02 | 耗时 1 ms | SQL 语句：
+SELECT ROLE_ID,modify_time,create_time,role_name,remark FROM t_role LIMIT 0,10;
+2019-09-12 14:45:08.282 febs [http-nio-80-exec-3] INFO  c.o.m.c.authentication.ShiroRealm -  Token 验证 :test
+2019-09-12 14:45:08.289 febs [http-nio-80-exec-3] INFO  p6spy - 2019-09-12 14:45:08 | 耗时 2 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'test');
+2019-09-12 14:45:08.298 febs [http-nio-80-exec-3] INFO  c.o.m.common.authentication.JWTUtil - token is valid
+2019-09-12 14:45:08.309 febs [http-nio-80-exec-3] INFO  p6spy - 2019-09-12 14:45:08 | 耗时 1 ms | SQL 语句：
+SELECT COUNT(1) FROM t_role;
+2019-09-12 14:45:08.311 febs [http-nio-80-exec-3] INFO  p6spy - 2019-09-12 14:45:08 | 耗时 0 ms | SQL 语句：
+SELECT ROLE_ID,modify_time,create_time,role_name,remark FROM t_role LIMIT 0,10;
+2019-09-12 14:49:11.071 febs [http-nio-80-exec-5] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-12 14:49:11.102 febs [http-nio-80-exec-5] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31ms. Found 0 repository interfaces.
+2019-09-12 14:49:11.235 febs [http-nio-80-exec-5] INFO  c.o.m.c.authentication.ShiroRealm -  Token 验证 :test
+2019-09-12 14:49:11.312 febs [http-nio-80-exec-5] INFO  p6spy - 2019-09-12 14:49:11 | 耗时 1 ms | SQL 语句：
+
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'test');
+
+2019-09-12 14:49:11.316 febs [http-nio-80-exec-5] INFO  c.o.m.common.authentication.JWTUtil - token is valid
+2019-09-12 14:49:11.329 febs [http-nio-80-exec-5] INFO  p6spy - 2019-09-12 14:49:11 | 耗时 0 ms | SQL 语句：
+
+SELECT COUNT(1) FROM t_role;
+
+2019-09-12 14:49:11.333 febs [http-nio-80-exec-5] INFO  p6spy - 2019-09-12 14:49:11 | 耗时 0 ms | SQL 语句：
+
+SELECT ROLE_ID,modify_time,create_time,role_name,remark FROM t_role LIMIT 0,10;
+
+2019-09-12 14:50:14.744 febs [http-nio-80-exec-7] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-12 14:50:14.789 febs [http-nio-80-exec-7] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44ms. Found 0 repository interfaces.
+2019-09-12 14:50:14.819 febs [http-nio-80-exec-7] INFO  c.o.m.c.authentication.ShiroRealm -  Token 验证 :test
+2019-09-12 14:50:14.866 febs [http-nio-80-exec-7] INFO  p6spy - 2019-09-12 14:50:14 | 耗时 1 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'test');
+2019-09-12 14:50:14.885 febs [http-nio-80-exec-7] INFO  c.o.m.common.authentication.JWTUtil - token is valid
+2019-09-12 14:50:14.932 febs [http-nio-80-exec-7] INFO  p6spy - 2019-09-12 14:50:14 | 耗时 4 ms | SQL 语句：
+SELECT COUNT(1) FROM t_role;
+2019-09-12 14:50:14.968 febs [http-nio-80-exec-7] INFO  p6spy - 2019-09-12 14:50:14 | 耗时 29 ms | SQL 语句：
+SELECT ROLE_ID,modify_time,create_time,role_name,remark FROM t_role LIMIT 0,10;
+2019-09-12 16:14:23.783 febs [Thread-20] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-12 16:14:23.925 febs [Thread-20] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 131ms. Found 0 repository interfaces.
+2019-09-12 16:14:24.063 febs [Thread-20] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-09-12 16:14:24.110 febs [Thread-20] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-12 16:14:24.392 febs [Thread-20] INFO  c.b.d.d.DynamicRoutingDataSource - closing dynamicDatasource  ing....
+2019-09-12 16:14:24.443 febs [Thread-20] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} closed
+2019-09-12 16:14:24.445 febs [Thread-20] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2019-09-12 16:14:45.649 febs [main] INFO  c.o.m.MangosteenServerApplication - Starting MangosteenServerApplication on liuxindeMacBook-Pro.local with PID 28132 (/Users/liuxin/me/Mangosteen/mangosteen-server/target/classes started by liuxin in /Users/liuxin/me/Mangosteen/mangosteen-server)
+2019-09-12 16:14:45.655 febs [main] INFO  c.o.m.MangosteenServerApplication - No active profile set, falling back to default profiles: default
+2019-09-12 16:14:47.408 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-09-12 16:14:47.412 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-12 16:14:47.480 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47ms. Found 0 repository interfaces.
+2019-09-12 16:14:48.604 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:14:48.610 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$890156c2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:14:48.627 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:14:48.633 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:14:48.648 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1f72e5f1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:14:48.678 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.orchardsoil.mangosteenserver.common.authentication.ShiroConfig$$EnhancerBySpringCGLIB$$90c70a67] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:14:48.714 febs [main] INFO  c.o.m.c.authentication.ShiroConfig - 配置 SecurityManager，并注入 shiroRealm
+2019-09-12 16:14:48.796 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:14:48.804 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatisPlusConfig' of type [com.orchardsoil.mangosteenserver.common.config.MybatisPlusConfig$$EnhancerBySpringCGLIB$$5f22b40d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:14:48.813 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'paginationInterceptor' of type [com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:14:48.837 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$5d3b528b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:14:48.858 febs [main] INFO  c.b.d.d.DynamicDataSourceCreator - 动态数据源-检测到druid存在,如配置中未指定type,druid会默认配置
+2019-09-12 16:14:48.858 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceCreator' of type [com.baomidou.dynamic.datasource.DynamicDataSourceCreator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:14:48.860 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceProvider' of type [com.baomidou.dynamic.datasource.provider.YmlDynamicDataSourceProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:14:48.864 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-检测到并开启了p6spy
+2019-09-12 16:14:48.946 febs [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1,primary} inited
+2019-09-12 16:14:48.951 febs [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2,online} inited
+2019-09-12 16:14:48.952 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 初始共加载 2 个数据源
+2019-09-12 16:14:48.952 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-加载 online 成功
+2019-09-12 16:14:48.952 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-加载 primary 成功
+2019-09-12 16:14:48.952 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 当前的默认数据源是单数据源，数据源名为 primary
+2019-09-12 16:14:48.952 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.baomidou.dynamic.datasource.DynamicRoutingDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:14:48.963 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:14:48.972 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:14:49.415 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:14:49.426 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:14:49.429 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:14:49.437 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [com.sun.proxy.$Proxy111] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:14:49.439 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userService' of type [com.orchardsoil.mangosteenserver.core.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:14:49.502 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroRealm' of type [com.orchardsoil.mangosteenserver.common.authentication.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:14:49.512 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:14:49.528 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:14:50.123 febs [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 80 (http)
+2019-09-12 16:14:50.146 febs [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2019-09-12 16:14:50.158 febs [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-09-12 16:14:50.158 febs [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-09-12 16:14:50.319 febs [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-09-12 16:14:50.319 febs [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4536 ms
+2019-09-12 16:14:51.475 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - closing dynamicDatasource  ing....
+2019-09-12 16:14:51.485 febs [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} closed
+2019-09-12 16:14:51.486 febs [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2019-09-12 16:14:51.490 febs [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2019-09-12 16:14:51.518 febs [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-09-12 16:14:51.776 febs [main] INFO  c.o.m.c.authentication.ShiroConfig - 配置 SecurityManager，并注入 shiroRealm
+2019-09-12 16:14:51.803 febs [main] INFO  c.o.m.c.authentication.ShiroConfig - 配置 SecurityManager，并注入 shiroRealm
+2019-09-12 16:19:10.679 febs [main] INFO  c.o.m.MangosteenServerApplication - Starting MangosteenServerApplication on liuxindeMacBook-Pro.local with PID 29348 (/Users/liuxin/me/Mangosteen/mangosteen-server/target/classes started by liuxin in /Users/liuxin/me/Mangosteen/mangosteen-server)
+2019-09-12 16:19:10.688 febs [main] INFO  c.o.m.MangosteenServerApplication - No active profile set, falling back to default profiles: default
+2019-09-12 16:19:12.500 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-09-12 16:19:12.503 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-12 16:19:12.577 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 46ms. Found 0 repository interfaces.
+2019-09-12 16:19:13.696 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:19:13.705 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$75529887] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:19:13.722 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:19:13.731 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:19:13.788 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$bc427b6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:19:13.913 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.orchardsoil.mangosteenserver.common.authentication.ShiroConfig$$EnhancerBySpringCGLIB$$7d184c2c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:19:14.031 febs [main] INFO  c.o.m.c.authentication.ShiroConfig - 配置 SecurityManager，并注入 shiroRealm
+2019-09-12 16:19:14.165 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:19:14.175 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatisPlusConfig' of type [com.orchardsoil.mangosteenserver.common.config.MybatisPlusConfig$$EnhancerBySpringCGLIB$$4b73f5d2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:19:14.186 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'paginationInterceptor' of type [com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:19:14.207 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$498c9450] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:19:14.250 febs [main] INFO  c.b.d.d.DynamicDataSourceCreator - 动态数据源-检测到druid存在,如配置中未指定type,druid会默认配置
+2019-09-12 16:19:14.252 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceCreator' of type [com.baomidou.dynamic.datasource.DynamicDataSourceCreator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:19:14.256 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceProvider' of type [com.baomidou.dynamic.datasource.provider.YmlDynamicDataSourceProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:19:14.263 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-检测到并开启了p6spy
+2019-09-12 16:19:14.475 febs [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1,primary} inited
+2019-09-12 16:19:14.482 febs [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2,online} inited
+2019-09-12 16:19:14.482 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 初始共加载 2 个数据源
+2019-09-12 16:19:14.482 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-加载 online 成功
+2019-09-12 16:19:14.482 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-加载 primary 成功
+2019-09-12 16:19:14.482 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 当前的默认数据源是单数据源，数据源名为 primary
+2019-09-12 16:19:14.483 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.baomidou.dynamic.datasource.DynamicRoutingDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:19:14.498 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:19:14.508 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:19:14.955 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:19:14.968 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:19:14.971 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:19:14.990 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [com.sun.proxy.$Proxy111] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:19:14.992 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userService' of type [com.orchardsoil.mangosteenserver.core.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:19:15.060 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroRealm' of type [com.orchardsoil.mangosteenserver.common.authentication.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:19:15.069 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:19:15.087 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:19:15.817 febs [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 80 (http)
+2019-09-12 16:19:15.846 febs [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2019-09-12 16:19:15.861 febs [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-09-12 16:19:15.861 febs [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-09-12 16:19:16.326 febs [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-09-12 16:19:16.326 febs [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 5494 ms
+2019-09-12 16:19:19.055 febs [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-09-12 16:19:19.338 febs [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-09-12 16:19:19.574 febs [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-12 16:19:20.455 febs [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2019-09-12 16:19:20.608 febs [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2019-09-12 16:19:20.631 febs [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2019-09-12 16:19:20.685 febs [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2019-09-12 16:19:20.982 febs [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+2019-09-12 16:19:21.018 febs [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 80 (http) with context path ''
+2019-09-12 16:19:21.024 febs [main] INFO  c.o.m.MangosteenServerApplication - Started MangosteenServerApplication in 12.05 seconds (JVM running for 22.423)
+2019-09-12 16:19:32.776 febs [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-12 16:19:32.777 febs [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-09-12 16:19:32.844 febs [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 67 ms
+2019-09-12 16:20:22.470 febs [http-nio-80-exec-3] INFO  p6spy - 2019-09-12 16:20:22 | 耗时 13 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = '1234qwer');
+2019-09-12 16:20:41.905 febs [http-nio-80-exec-8] INFO  p6spy - 2019-09-12 16:20:41 | 耗时 2 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'qwer1234');
+2019-09-12 16:21:05.852 febs [http-nio-80-exec-3] INFO  p6spy - 2019-09-12 16:21:05 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = '1234qwer');
+2019-09-12 16:22:02.339 febs [http-nio-80-exec-5] INFO  p6spy - 2019-09-12 16:22:02 | 耗时 3 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = '1234qwer');
+2019-09-12 16:22:37.864 febs [http-nio-80-exec-7] INFO  p6spy - 2019-09-12 16:22:37 | 耗时 1 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'mrbird');
+2019-09-12 16:24:32.184 febs [http-nio-80-exec-2] INFO  p6spy - 2019-09-12 16:24:32 | 耗时 1 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'mrbird');
+2019-09-12 16:26:24.389 febs [http-nio-80-exec-3] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-12 16:26:24.472 febs [http-nio-80-exec-3] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 82ms. Found 0 repository interfaces.
+2019-09-12 16:26:25.533 febs [http-nio-80-exec-3] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-09-12 16:26:25.586 febs [http-nio-80-exec-3] INFO  p6spy - 2019-09-12 16:26:25 | 耗时 1 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'mrbird');
+2019-09-12 16:26:59.917 febs [http-nio-80-exec-4] INFO  p6spy - 2019-09-12 16:26:59 | 耗时 1 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'scott');
+2019-09-12 16:27:01.882 febs [http-nio-80-exec-5] INFO  p6spy - 2019-09-12 16:27:01 | 耗时 1 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'scott');
+2019-09-12 16:27:09.078 febs [http-nio-80-exec-6] INFO  p6spy - 2019-09-12 16:27:09 | 耗时 2 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'scott');
+2019-09-12 16:27:13.776 febs [http-nio-80-exec-7] INFO  p6spy - 2019-09-12 16:27:13 | 耗时 2 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'scott');
+2019-09-12 16:27:23.532 febs [http-nio-80-exec-8] INFO  p6spy - 2019-09-12 16:27:23 | 耗时 1 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'test');
+2019-09-12 16:27:23.557 febs [http-nio-80-exec-8] INFO  c.o.m.common.authentication.JWTUtil - =======Token 过期时间:Thu Oct 24 08:27:23 CST 2019
+2019-09-12 16:29:31.956 febs [http-nio-80-exec-9] INFO  p6spy - 2019-09-12 16:29:31 | 耗时 1 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'scott');
+2019-09-12 16:29:39.128 febs [http-nio-80-exec-10] INFO  p6spy - 2019-09-12 16:29:39 | 耗时 1 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'scott');
+2019-09-12 16:29:40.172 febs [http-nio-80-exec-1] INFO  p6spy - 2019-09-12 16:29:40 | 耗时 2 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'scott');
+2019-09-12 16:29:41.078 febs [http-nio-80-exec-2] INFO  p6spy - 2019-09-12 16:29:41 | 耗时 1 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'scott');
+2019-09-12 16:29:41.718 febs [http-nio-80-exec-3] INFO  p6spy - 2019-09-12 16:29:41 | 耗时 1 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'scott');
+2019-09-12 16:29:42.318 febs [http-nio-80-exec-4] INFO  p6spy - 2019-09-12 16:29:42 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'scott');
+2019-09-12 16:30:53.572 febs [http-nio-80-exec-5] INFO  p6spy - 2019-09-12 16:30:53 | 耗时 2 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'scott');
+2019-09-12 16:31:01.467 febs [http-nio-80-exec-6] INFO  p6spy - 2019-09-12 16:31:01 | 耗时 3 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'scott');
+2019-09-12 16:32:10.426 febs [http-nio-80-exec-7] INFO  p6spy - 2019-09-12 16:32:10 | 耗时 5 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'test');
+2019-09-12 16:32:10.456 febs [http-nio-80-exec-7] INFO  c.o.m.common.authentication.JWTUtil - =======Token 过期时间:Thu Oct 24 08:32:10 CST 2019
+2019-09-12 16:33:17.437 febs [Thread-20] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-09-12 16:33:17.453 febs [Thread-20] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-12 16:33:17.474 febs [Thread-20] INFO  c.b.d.d.DynamicRoutingDataSource - closing dynamicDatasource  ing....
+2019-09-12 16:33:17.481 febs [Thread-20] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} closed
+2019-09-12 16:33:17.487 febs [Thread-20] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2019-09-12 16:33:31.258 febs [main] INFO  c.o.m.MangosteenServerApplication - Starting MangosteenServerApplication on liuxindeMacBook-Pro.local with PID 34689 (/Users/liuxin/me/Mangosteen/mangosteen-server/target/classes started by liuxin in /Users/liuxin/me/Mangosteen/mangosteen-server)
+2019-09-12 16:33:31.263 febs [main] INFO  c.o.m.MangosteenServerApplication - No active profile set, falling back to default profiles: default
+2019-09-12 16:33:33.046 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-09-12 16:33:33.050 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-12 16:33:33.121 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49ms. Found 0 repository interfaces.
+2019-09-12 16:33:34.321 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:33:34.328 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$9f82ebd0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:33:34.340 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:33:34.343 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:33:34.355 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$35f47aff] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:33:34.377 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.orchardsoil.mangosteenserver.common.authentication.ShiroConfig$$EnhancerBySpringCGLIB$$a7489f75] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:33:34.414 febs [main] INFO  c.o.m.c.authentication.ShiroConfig - 配置 SecurityManager，并注入 shiroRealm
+2019-09-12 16:33:34.493 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:33:34.501 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatisPlusConfig' of type [com.orchardsoil.mangosteenserver.common.config.MybatisPlusConfig$$EnhancerBySpringCGLIB$$75a4491b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:33:34.509 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'paginationInterceptor' of type [com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:33:34.523 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$73bce799] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:33:34.549 febs [main] INFO  c.b.d.d.DynamicDataSourceCreator - 动态数据源-检测到druid存在,如配置中未指定type,druid会默认配置
+2019-09-12 16:33:34.549 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceCreator' of type [com.baomidou.dynamic.datasource.DynamicDataSourceCreator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:33:34.551 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceProvider' of type [com.baomidou.dynamic.datasource.provider.YmlDynamicDataSourceProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:33:34.554 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-检测到并开启了p6spy
+2019-09-12 16:33:34.638 febs [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1,primary} inited
+2019-09-12 16:33:34.643 febs [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2,online} inited
+2019-09-12 16:33:34.643 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 初始共加载 2 个数据源
+2019-09-12 16:33:34.644 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-加载 online 成功
+2019-09-12 16:33:34.644 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-加载 primary 成功
+2019-09-12 16:33:34.644 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 当前的默认数据源是单数据源，数据源名为 primary
+2019-09-12 16:33:34.644 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.baomidou.dynamic.datasource.DynamicRoutingDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:33:34.655 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:33:34.665 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:33:35.058 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:33:35.075 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:33:35.080 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:33:35.090 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [com.sun.proxy.$Proxy111] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:33:35.092 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userService' of type [com.orchardsoil.mangosteenserver.core.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:33:35.159 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroRealm' of type [com.orchardsoil.mangosteenserver.common.authentication.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:33:35.170 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:33:35.187 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:33:35.675 febs [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 80 (http)
+2019-09-12 16:33:35.702 febs [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2019-09-12 16:33:35.716 febs [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-09-12 16:33:35.717 febs [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-09-12 16:33:35.915 febs [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-09-12 16:33:35.915 febs [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4562 ms
+2019-09-12 16:33:37.948 febs [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-09-12 16:33:38.309 febs [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-09-12 16:33:38.577 febs [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-12 16:33:39.503 febs [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2019-09-12 16:33:39.662 febs [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2019-09-12 16:33:39.685 febs [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2019-09-12 16:33:39.740 febs [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2019-09-12 16:33:40.062 febs [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+2019-09-12 16:33:40.101 febs [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 80 (http) with context path ''
+2019-09-12 16:33:40.107 febs [main] INFO  c.o.m.MangosteenServerApplication - Started MangosteenServerApplication in 10.217 seconds (JVM running for 18.245)
+2019-09-12 16:34:43.513 febs [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-12 16:34:43.513 febs [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-09-12 16:34:43.545 febs [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 32 ms
+2019-09-12 16:34:44.283 febs [http-nio-80-exec-1] INFO  p6spy - 2019-09-12 16:34:44 | 耗时 13 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'test');
+2019-09-12 16:34:44.306 febs [http-nio-80-exec-1] INFO  c.o.m.common.authentication.JWTUtil - =======Token 过期时间:Thu Oct 24 08:34:44 CST 2019
+2019-09-12 16:35:34.564 febs [Thread-20] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-09-12 16:35:34.618 febs [Thread-20] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-12 16:35:34.637 febs [Thread-20] INFO  c.b.d.d.DynamicRoutingDataSource - closing dynamicDatasource  ing....
+2019-09-12 16:35:34.642 febs [Thread-20] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} closed
+2019-09-12 16:35:34.646 febs [Thread-20] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2019-09-12 16:35:50.866 febs [main] INFO  c.o.m.MangosteenServerApplication - Starting MangosteenServerApplication on liuxindeMacBook-Pro.local with PID 35649 (/Users/liuxin/me/Mangosteen/mangosteen-server/target/classes started by liuxin in /Users/liuxin/me/Mangosteen/mangosteen-server)
+2019-09-12 16:35:50.871 febs [main] INFO  c.o.m.MangosteenServerApplication - No active profile set, falling back to default profiles: default
+2019-09-12 16:35:52.708 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-09-12 16:35:52.712 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-12 16:35:52.777 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45ms. Found 0 repository interfaces.
+2019-09-12 16:35:53.928 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:35:53.935 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$bae2c775] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:35:53.948 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:35:53.952 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:35:53.964 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$515456a4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:35:53.988 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.orchardsoil.mangosteenserver.common.authentication.ShiroConfig$$EnhancerBySpringCGLIB$$c2a87b1a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:35:54.025 febs [main] INFO  c.o.m.c.authentication.ShiroConfig - 配置 SecurityManager，并注入 shiroRealm
+2019-09-12 16:35:54.107 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:35:54.116 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatisPlusConfig' of type [com.orchardsoil.mangosteenserver.common.config.MybatisPlusConfig$$EnhancerBySpringCGLIB$$910424c0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:35:54.124 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'paginationInterceptor' of type [com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:35:54.147 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$8f1cc33e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:35:54.172 febs [main] INFO  c.b.d.d.DynamicDataSourceCreator - 动态数据源-检测到druid存在,如配置中未指定type,druid会默认配置
+2019-09-12 16:35:54.173 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceCreator' of type [com.baomidou.dynamic.datasource.DynamicDataSourceCreator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:35:54.175 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceProvider' of type [com.baomidou.dynamic.datasource.provider.YmlDynamicDataSourceProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:35:54.179 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-检测到并开启了p6spy
+2019-09-12 16:35:54.287 febs [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1,primary} inited
+2019-09-12 16:35:54.292 febs [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2,online} inited
+2019-09-12 16:35:54.293 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 初始共加载 2 个数据源
+2019-09-12 16:35:54.293 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-加载 online 成功
+2019-09-12 16:35:54.293 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-加载 primary 成功
+2019-09-12 16:35:54.293 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 当前的默认数据源是单数据源，数据源名为 primary
+2019-09-12 16:35:54.293 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.baomidou.dynamic.datasource.DynamicRoutingDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:35:54.307 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:35:54.315 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:35:54.814 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:35:54.830 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:35:54.835 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:35:54.852 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [com.sun.proxy.$Proxy111] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:35:54.854 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userService' of type [com.orchardsoil.mangosteenserver.core.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:35:54.924 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroRealm' of type [com.orchardsoil.mangosteenserver.common.authentication.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:35:54.936 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:35:54.959 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:35:55.550 febs [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 80 (http)
+2019-09-12 16:35:55.573 febs [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2019-09-12 16:35:55.587 febs [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-09-12 16:35:55.587 febs [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-09-12 16:35:55.749 febs [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-09-12 16:35:55.749 febs [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4687 ms
+2019-09-12 16:35:57.938 febs [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-09-12 16:35:58.227 febs [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-09-12 16:35:58.489 febs [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-12 16:35:59.351 febs [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2019-09-12 16:35:59.520 febs [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2019-09-12 16:35:59.544 febs [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2019-09-12 16:35:59.601 febs [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2019-09-12 16:35:59.956 febs [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+2019-09-12 16:35:59.994 febs [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 80 (http) with context path ''
+2019-09-12 16:35:59.999 febs [main] INFO  c.o.m.MangosteenServerApplication - Started MangosteenServerApplication in 10.374 seconds (JVM running for 16.644)
+2019-09-12 16:36:00.464 febs [RMI TCP Connection(2)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-12 16:36:00.464 febs [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-09-12 16:36:00.486 febs [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 22 ms
+2019-09-12 16:36:00.887 febs [RMI TCP Connection(1)-127.0.0.1] INFO  p6spy - 2019-09-12 16:36:00 | 耗时 191 ms | SQL 语句：
+/* ping */ SELECT 1;
+2019-09-12 16:36:26.600 febs [http-nio-80-exec-1] INFO  p6spy - 2019-09-12 16:36:26 | 耗时 1 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'test');
+2019-09-12 16:36:26.612 febs [http-nio-80-exec-1] INFO  c.o.m.common.authentication.JWTUtil - =======Token 过期时间:Thu Oct 24 08:36:26 CST 2019
+2019-09-12 16:41:14.285 febs [http-nio-80-exec-2] INFO  p6spy - 2019-09-12 16:41:14 | 耗时 1 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'test');
+2019-09-12 16:41:14.289 febs [http-nio-80-exec-2] INFO  c.o.m.common.authentication.JWTUtil - =======Token 过期时间:Thu Oct 24 08:41:14 CST 2019
+2019-09-12 16:45:27.867 febs [Thread-40] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-09-12 16:45:27.885 febs [Thread-40] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-12 16:45:27.899 febs [Thread-40] INFO  c.b.d.d.DynamicRoutingDataSource - closing dynamicDatasource  ing....
+2019-09-12 16:45:27.906 febs [Thread-40] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} closed
+2019-09-12 16:45:27.911 febs [Thread-40] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2019-09-12 16:45:41.889 febs [main] INFO  c.o.m.MangosteenServerApplication - Starting MangosteenServerApplication on liuxindeMacBook-Pro.local with PID 38812 (/Users/liuxin/me/Mangosteen/mangosteen-server/target/classes started by liuxin in /Users/liuxin/me/Mangosteen/mangosteen-server)
+2019-09-12 16:45:41.908 febs [main] INFO  c.o.m.MangosteenServerApplication - No active profile set, falling back to default profiles: default
+2019-09-12 16:45:44.086 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-09-12 16:45:44.090 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-12 16:45:44.164 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49ms. Found 0 repository interfaces.
+2019-09-12 16:45:46.528 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:45:46.538 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$e73cdfc9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:45:46.553 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:45:46.557 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:45:46.571 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7dae6ef8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:45:46.600 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.orchardsoil.mangosteenserver.common.authentication.ShiroConfig$$EnhancerBySpringCGLIB$$ef02936e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:45:46.663 febs [main] INFO  c.o.m.c.authentication.ShiroConfig - 配置 SecurityManager，并注入 shiroRealm
+2019-09-12 16:45:46.846 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:45:46.858 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatisPlusConfig' of type [com.orchardsoil.mangosteenserver.common.config.MybatisPlusConfig$$EnhancerBySpringCGLIB$$bd5e3d14] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:45:46.869 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'paginationInterceptor' of type [com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:45:46.885 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$bb76db92] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:45:46.912 febs [main] INFO  c.b.d.d.DynamicDataSourceCreator - 动态数据源-检测到druid存在,如配置中未指定type,druid会默认配置
+2019-09-12 16:45:46.913 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceCreator' of type [com.baomidou.dynamic.datasource.DynamicDataSourceCreator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:45:46.916 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceProvider' of type [com.baomidou.dynamic.datasource.provider.YmlDynamicDataSourceProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:45:46.921 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-检测到并开启了p6spy
+2019-09-12 16:45:47.020 febs [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1,primary} inited
+2019-09-12 16:45:47.027 febs [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2,online} inited
+2019-09-12 16:45:47.027 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 初始共加载 2 个数据源
+2019-09-12 16:45:47.027 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-加载 online 成功
+2019-09-12 16:45:47.028 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-加载 primary 成功
+2019-09-12 16:45:47.028 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 当前的默认数据源是单数据源，数据源名为 primary
+2019-09-12 16:45:47.028 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.baomidou.dynamic.datasource.DynamicRoutingDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:45:47.042 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:45:47.055 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:45:47.948 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:45:47.978 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:45:47.989 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:45:48.014 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [com.sun.proxy.$Proxy111] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:45:48.019 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userService' of type [com.orchardsoil.mangosteenserver.core.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:45:48.205 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroRealm' of type [com.orchardsoil.mangosteenserver.common.authentication.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:45:48.220 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:45:48.258 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-12 16:45:48.948 febs [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 80 (http)
+2019-09-12 16:45:48.993 febs [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2019-09-12 16:45:49.012 febs [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-09-12 16:45:49.013 febs [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-09-12 16:45:49.406 febs [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-09-12 16:45:49.406 febs [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 7317 ms
+2019-09-12 16:45:52.461 febs [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-09-12 16:45:52.841 febs [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-09-12 16:45:53.149 febs [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-12 16:45:54.397 febs [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2019-09-12 16:45:54.579 febs [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2019-09-12 16:45:54.622 febs [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2019-09-12 16:45:54.683 febs [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2019-09-12 16:45:55.038 febs [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+2019-09-12 16:45:55.084 febs [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 80 (http) with context path ''
+2019-09-12 16:45:55.091 febs [main] INFO  c.o.m.MangosteenServerApplication - Started MangosteenServerApplication in 15.033 seconds (JVM running for 25.799)
+2019-09-12 16:46:26.087 febs [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-12 16:46:26.088 febs [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-09-12 16:46:26.110 febs [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 22 ms
+2019-09-12 16:46:27.961 febs [http-nio-80-exec-1] INFO  p6spy - 2019-09-12 16:46:27 | 耗时 17 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user WHERE (username = 'test');
+2019-09-12 16:46:27.998 febs [http-nio-80-exec-1] INFO  c.o.m.common.authentication.JWTUtil - =======Token 过期时间:Thu Oct 24 08:46:27 CST 2019
+2019-09-12 16:52:06.750 febs [http-nio-80-exec-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-12 16:52:06.765 febs [http-nio-80-exec-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14ms. Found 0 repository interfaces.
+2019-09-12 18:27:33.531 febs [Thread-20] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-09-12 18:27:33.565 febs [Thread-20] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-12 18:27:33.584 febs [Thread-20] INFO  c.b.d.d.DynamicRoutingDataSource - closing dynamicDatasource  ing....
+2019-09-12 18:27:33.595 febs [Thread-20] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} closed
+2019-09-12 18:27:33.596 febs [Thread-20] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
