@@ -32,3 +32,8 @@ build/
 
 ### log ###
 log/
+
+
+### other ###
+mvnw*
+dump.rdb
