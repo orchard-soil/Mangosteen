@@ -1,8 +1,10 @@
 package com.orchardsoil.mangosteenserver.common.authentication;
 
-import com.orchardsoil.mangosteenserver.common.utils.BaseUtil;
 import com.orchardsoil.mangosteenserver.common.utils.HttpContextUtil;
 import com.orchardsoil.mangosteenserver.core.model.User;
+import com.orchardsoil.mangosteenserver.core.service.UserService;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -10,23 +12,27 @@ import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Set;
 
 /**
  * 自定义授权
  */
+@Slf4j
 public class ShiroRealm extends AuthorizingRealm {
+
+  @Autowired
+  private UserService userService;
+
+
   @Override
   public boolean supports(AuthenticationToken token) {
     return token instanceof JWTToken;
   }
 
-  /**
-   * `
+  /**`
    * 授权模块，获取用户角色和权限
    *
    * @param token token
@@ -37,7 +43,7 @@ public class ShiroRealm extends AuthorizingRealm {
     String username = JWTUtil.getUsername(token.toString());
 
     SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
-//
+
 //    // 获取用户角色集
 //    Set<String> roleSet = userManager.getUserRoles(username);
 //    simpleAuthorizationInfo.setRoles(roleSet);
@@ -62,25 +68,26 @@ public class ShiroRealm extends AuthorizingRealm {
 
     // 从 redis里获取这个 token
     HttpServletRequest request = HttpContextUtil.getHttpServletRequest();
-    String ip = "";
-
-    String encryptToken = BaseUtil.encryptToken(token);
-    String encryptTokenInRedis = null;
+//    String ip = IPUtil.getIpAddr(request);
+//
+//    String encryptToken = FebsUtil.encryptToken(token);
+//    String encryptTokenInRedis = null;
 //    try {
 //      encryptTokenInRedis = redisService.get(FebsConstant.TOKEN_CACHE_PREFIX + encryptToken + "." + ip);
 //    } catch (Exception ignore) {
 //    }
     // 如果找不到，说明已经失效
-    if (StringUtils.isBlank(encryptTokenInRedis))
+    if (false)
       throw new AuthenticationException("token已经过期");
 
     String username = JWTUtil.getUsername(token);
-
+    log.info(" Token 验证 :{}",username);
     if (StringUtils.isBlank(username))
       throw new AuthenticationException("token校验不通过");
 
     // 通过用户名查询用户信息
-    User user = new User();
+    User user = userService.findByName(username);
+//        userManager.getUser(username);
 
     if (user == null)
       throw new AuthenticationException("用户名或密码错误");

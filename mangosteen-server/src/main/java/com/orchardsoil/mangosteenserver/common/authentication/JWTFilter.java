@@ -1,5 +1,6 @@
 package com.orchardsoil.mangosteenserver.common.authentication;
 
+import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.orchardsoil.mangosteenserver.common.properties.MangosteenProperties;
 import com.orchardsoil.mangosteenserver.common.utils.BaseUtil;
@@ -22,6 +23,7 @@ import java.io.PrintWriter;
 
 @Slf4j
 public class JWTFilter extends BasicHttpAuthenticationFilter {
+
   private static final String TOKEN = "Authentication";
 
   private AntPathMatcher pathMatcher = new AntPathMatcher();
@@ -31,8 +33,9 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
     HttpServletRequest httpServletRequest = (HttpServletRequest) request;
     MangosteenProperties mangosteenProperties = SpringContextUtil.getBean(MangosteenProperties.class);
     //从配置文件中获取无需验证的url
+//    log.info("====无需验证  {}",mangosteenProperties.getShiro().getAnonUrl());
     String[] anonUrl = StringUtils.splitByWholeSeparatorPreserveAllTokens(mangosteenProperties.getShiro().getAnonUrl(), StringPool.COMMA);
-    boolean match = true;
+    boolean match = false;
       for (String u : anonUrl) {
         if (pathMatcher.match(u, httpServletRequest.getRequestURI()))
           match = true;

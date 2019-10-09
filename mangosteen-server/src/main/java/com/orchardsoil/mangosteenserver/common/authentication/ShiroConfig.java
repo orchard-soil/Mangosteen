@@ -1,5 +1,6 @@
 package com.orchardsoil.mangosteenserver.common.authentication;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
@@ -10,7 +11,7 @@ import org.apache.shiro.mgt.SecurityManager;
 import javax.servlet.Filter;
 import java.util.LinkedHashMap;
 
-
+@Slf4j
 @Configuration
 public class ShiroConfig {
   @Bean
@@ -23,7 +24,7 @@ public class ShiroConfig {
     LinkedHashMap<String, Filter> filters = new LinkedHashMap<>();
     filters.put("jwt", new JWTFilter());
     shiroFilterFactoryBean.setFilters(filters);
-    shiroFilterFactoryBean.setLoginUrl("/login");
+
     LinkedHashMap<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
     // 所有请求都要经过 jwt过滤器
     filterChainDefinitionMap.put("/**", "jwt");
@@ -35,6 +36,7 @@ public class ShiroConfig {
   @Bean
   public SecurityManager securityManager() {
     DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
+    log.info("配置 SecurityManager，并注入 shiroRealm");
     // 配置 SecurityManager，并注入 shiroRealm
     securityManager.setRealm(shiroRealm());
     return securityManager;

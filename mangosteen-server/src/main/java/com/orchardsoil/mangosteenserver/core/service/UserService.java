@@ -3,7 +3,16 @@ package com.orchardsoil.mangosteenserver.core.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.orchardsoil.mangosteenserver.core.model.User;
 
+import java.util.List;
+
 public interface UserService extends IService<User> {
+
+  /**
+   * 获取用户列表
+   * @return
+   */
+  List<User> getUserLst();
+
   /**
    * 通过用户名查找用户
    *

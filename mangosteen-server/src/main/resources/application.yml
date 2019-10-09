@@ -1,6 +1,8 @@
 server:
   port: 80
 
+config:
+  decrpt: true
 spring:
   datasource:
     dynamic:
@@ -18,8 +20,8 @@ spring:
       datasource:
         # 数据源-1，名称为 primary
         primary:
-          username: root
-          password: liuxin
+          username: ENC(bNVOqb7WKLX5Bjnw+LMv92taj25KOxDimXxILPQjw42wgv+1lHzOH8kr97xDwWdhpY67QuYCS7sWN4W46YbkFA==)
+          password: ENC(mnl1c7Zuy0qzQuu9pvFDWOR/kHfIQqqyXgiVaMbUX947adR6VjWOVBUIVwCtbof+uFPsxgII2aI8pnetCwMgYg==)
           driver-class-name: com.mysql.cj.jdbc.Driver
           url: jdbc:mysql://127.0.0.1:3306/mangosteen?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
 
@@ -44,6 +46,6 @@ mangosteen:
         num: 1000
   shiro:
     # 后端免认证接口 url
-    anonUrl: /login,/logout/**,/regist,/user/check/**
+    anonUrl: /druid/**,/login,/images/captcha,/logout/**,/regist,/user/check/**,/doc.html,/swagger-resources,/v2/api-docs,/v2/api-docs-ext
     # token有效期，单位秒
-    jwtTimeOut: 3600
+    jwtTimeOut: 3600000

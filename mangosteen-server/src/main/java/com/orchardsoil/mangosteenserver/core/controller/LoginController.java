@@ -3,7 +3,6 @@ package com.orchardsoil.mangosteenserver.core.controller;
 import com.google.code.kaptcha.impl.DefaultKaptcha;
 import com.orchardsoil.mangosteenserver.common.authentication.JWTToken;
 import com.orchardsoil.mangosteenserver.common.authentication.JWTUtil;
-import com.orchardsoil.mangosteenserver.common.controller.BaseController;
 import com.orchardsoil.mangosteenserver.common.entity.MangosteenResponse;
 import com.orchardsoil.mangosteenserver.common.exception.MangosteenException;
 import com.orchardsoil.mangosteenserver.common.properties.MangosteenProperties;
@@ -12,12 +11,17 @@ import com.orchardsoil.mangosteenserver.common.utils.DateUtil;
 import com.orchardsoil.mangosteenserver.common.utils.MD5Util;
 import com.orchardsoil.mangosteenserver.core.model.User;
 import com.orchardsoil.mangosteenserver.core.service.UserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.shiro.authc.UsernamePasswordToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.imageio.ImageIO;
@@ -31,7 +35,9 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
+@Slf4j
 @Validated
+@Api(description = "用户管理")
 @RestController
 public class LoginController {
   @Autowired
@@ -45,11 +51,19 @@ public class LoginController {
 
 
   @PostMapping("/login")
+  @ApiOperation(value = "用户登录", notes = " 用户登录 ")
+  @ApiImplicitParams(
+      {
+          @ApiImplicitParam(name = "username", value = "用户名", required = true, dataType = "String"),
+          @ApiImplicitParam(name = "password", value = "密码", required = true, dataType = "String"),
+          @ApiImplicitParam(name = "vrifyCode", value = "验证码", required = true, dataType = "String")
+      }
+  )
 //  @Limit(key = "login", period = 60, count = 20, name = "登录接口", prefix = "limit")
   public MangosteenResponse login(
-      @NotBlank(message = "{required}") String username,
-      @NotBlank(message = "{required}") String password,
-      @NotBlank(message = "{required}") String vrifyCode,
+      @RequestParam(value = "username") String username,
+      @RequestParam(value = "password") String password,
+      @RequestParam(value = "vrifyCode") String vrifyCode,
       HttpServletRequest request) throws Exception {
     // 从session 中获取验证码
     String verificationCodeIn = (String) request.getSession().getAttribute("vrifyCode");
@@ -72,8 +86,9 @@ public class LoginController {
 //    if (User.STATUS_LOCK.equals(user.getStatus()))
 //      throw new FebsException("账号已被锁定,请联系管理员！");
 
-
+    // 设置Token 到 JWT
     String token = BaseUtil.encryptToken(JWTUtil.sign(username, password));
+
     LocalDateTime expireTime = LocalDateTime.now().plusSeconds(properties.getShiro().getJwtTimeOut());
     String expireTimeStr = DateUtil.formatFullTime(expireTime);
     JWTToken jwtToken = new JWTToken(token, expireTimeStr);
@@ -90,7 +105,8 @@ public class LoginController {
    * @param httpServletResponse
    * @throws Exception
    */
-  @GetMapping("images/captcha")
+  @ApiOperation(value = "获取验证码", notes = " 获取登录验证码 ")
+  @GetMapping(value = "images/captcha", produces = "image/jpg")
   public void captcha(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
       throws Exception {
     byte[] captchaChallengeAsJpeg = null;
@@ -126,11 +142,17 @@ public class LoginController {
    * @param password
    * @throws Exception
    */
+  @ApiOperation(value = "用户注册", notes = " 用户注册 ")
+  @ApiImplicitParams({
+      @ApiImplicitParam(name = "username", value = "用户名", required = true, dataType = "String"),
+      @ApiImplicitParam(name = "password", value = "密码", required = true, dataType = "String")
+  })
   @PostMapping("regist")
-  public void regist(
-      @NotBlank(message = "{required}") String username,
-      @NotBlank(message = "{required}") String password) throws Exception {
+  public MangosteenResponse regist(
+      @RequestParam(value = "username", required = true) String username,
+      @RequestParam(value = "password", required = true) String password) throws Exception {
     this.userService.regist(username, password);
+    return new MangosteenResponse().message("用户注册成功").success();
   }
 
   /**
