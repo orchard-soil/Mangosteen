@@ -179,6 +179,7 @@ public class LoginController {
 //    this.redisService.set(SystemConstant.TOKEN_CACHE_PREFIX + token.getToken() + StringPool.DOT + ip, token.getToken(), properties.getShiro().getJwtTimeOut() * 1000);
 
 //    return activeUser.getId();
+    return "";
   }
 
   /**
