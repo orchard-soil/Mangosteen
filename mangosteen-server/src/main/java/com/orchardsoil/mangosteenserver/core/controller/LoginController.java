@@ -69,6 +69,7 @@ public class LoginController {
   )
 //  @Limit(key = "login", period = 60, count = 20, name = "登录接口", prefix = "limit")
   public MangosteenResponse login(
+<<<<<<< HEAD
       @NotBlank(message = "{required}") @RequestParam(value = "username") String username,
       @NotBlank(message = "{required}") @RequestParam(value = "password") String password,
       @NotBlank(message = "{required}") @RequestParam(value = "vrifyCode") String vrifyCode,
@@ -83,27 +84,49 @@ public class LoginController {
 //    }
     username = StringUtils.lowerCase(username);
     password = MD5Util.encrypt(username, password);
+=======
+      @RequestParam(value = "username") String username,
+      @RequestParam(value = "password") String password,
+      @RequestParam(value = "vrifyCode") String vrifyCode,
+      HttpServletRequest request) {
+    try {
+      // 从session 中获取验证码
+      String verificationCodeIn = (String) request.getSession().getAttribute("vrifyCode");
+      // 删除
+      request.getSession().removeAttribute("vrifyCode");
+      // 判断验证码是否正确
+      if (StringUtils.isEmpty(vrifyCode) || StringUtils.isEmpty(verificationCodeIn) || !verificationCodeIn.equals(vrifyCode)) {
+        throw new MangosteenException("验证码错误");
+      }
+      username = StringUtils.lowerCase(username);
+      password = MD5Util.encrypt(username, password);
+>>>>>>> 1b02a976066a2fe4c0569ed163ee4f1e246391d7
 
-    final String errorMessage = "用户名或密码错误";
-    User user = this.userService.findByName(username);
+      final String errorMessage = "用户名或密码错误";
+      User user = this.userService.findByName(username);
 
-    if (user == null)
-      throw new MangosteenException(errorMessage);
-    if (!StringUtils.equals(user.getPassword(), password))
-      throw new MangosteenException(errorMessage);
+      if (user == null)
+        throw new MangosteenException(errorMessage);
+      if (!StringUtils.equals(user.getPassword(), password))
+        throw new MangosteenException(errorMessage);
 //    if (User.STATUS_LOCK.equals(user.getStatus()))
 //      throw new FebsException("账号已被锁定,请联系管理员！");
 
-    // 设置Token 到 JWT
-    String token = BaseUtil.encryptToken(JWTUtil.sign(username, password));
+      // 设置Token 到 JWT
+      String token = BaseUtil.encryptToken(JWTUtil.sign(username, password));
 
-    LocalDateTime expireTime = LocalDateTime.now().plusSeconds(properties.getShiro().getJwtTimeOut());
-    String expireTimeStr = DateUtil.formatFullTime(expireTime);
-    JWTToken jwtToken = new JWTToken(token, expireTimeStr);
-//    String userId = this.saveTokenToRedis(user, jwtToken, request);
-    user.setId("1");
-    Map<String, Object> userInfo = this.generateUserInfo(jwtToken, user);
-    return new MangosteenResponse().message("认证成功").data(userInfo);
+      LocalDateTime expireTime = LocalDateTime.now().plusSeconds(properties.getShiro().getJwtTimeOut());
+      String expireTimeStr = DateUtil.formatFullTime(expireTime);
+      JWTToken jwtToken = new JWTToken(token, expireTimeStr);
+      //String userId = this.saveTokenToRedis(user, jwtToken, request);
+      user.setId("1");
+      Map<String, Object> userInfo = this.generateUserInfo(jwtToken, user);
+      return new MangosteenResponse().message("认证成功").data(userInfo).success();
+    }catch(MangosteenException e){
+      return new MangosteenResponse().message(e.getMessage()).fail();
+    }
+
+
   }
 
   /**
@@ -157,10 +180,38 @@ public class LoginController {
   })
   @PostMapping("regist")
   public MangosteenResponse regist(
+<<<<<<< HEAD
       @NotBlank(message = "账号不能为空") @RequestParam(value = "username") String username,
       @NotBlank(message = "密码不能为空") @RequestParam(value = "password") String password) throws Exception {
     this.userService.regist(username, password);
     return new MangosteenResponse().message("用户注册成功").success();
+=======
+      @RequestParam(value = "username", required = true) String username,
+      @RequestParam(value = "password", required = true) String password) throws Exception {
+    try {
+      this.userService.regist(username, password);
+
+      // 注册成功后查询出此用户的信息 返回给前台
+      User user = this.userService.findByName(username);
+      if (user == null) {
+        throw new MangosteenException("没有查找到用户!");
+      }
+
+      // 设置Token 到 JWT
+      String token = BaseUtil.encryptToken(JWTUtil.sign(username, password));
+
+      LocalDateTime expireTime = LocalDateTime.now().plusSeconds(properties.getShiro().getJwtTimeOut());
+      String expireTimeStr = DateUtil.formatFullTime(expireTime);
+      JWTToken jwtToken = new JWTToken(token, expireTimeStr);
+
+      //user.setId("");
+      Map<String, Object> userInfo = this.generateUserInfo(jwtToken, user);
+
+      return new MangosteenResponse().message("用户注册成功").success().data(userInfo);
+    }catch (MangosteenException e){
+      return new MangosteenResponse().message(e.getMessage()).fail();
+    }
+>>>>>>> 1b02a976066a2fe4c0569ed163ee4f1e246391d7
   }
 
   private String saveTokenToRedis(User user, JWTToken token, HttpServletRequest request) throws Exception {
