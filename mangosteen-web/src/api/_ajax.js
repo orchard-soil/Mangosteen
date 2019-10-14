@@ -3,6 +3,7 @@
  */
 
 import axios from 'axios'
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 export default function _ajax(url = '', param = {}, type='GET'){
     // 定义 promise 对象
