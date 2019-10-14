@@ -33,6 +33,15 @@ public class MangosteenResponse extends HashMap<String, Object> {
     return this;
   }
 
+  /**
+   * 参数错误
+   * @return
+   */
+  public MangosteenResponse bad() {
+    this.code(HttpStatus.BAD_REQUEST);
+    return this;
+  }
+
   @Override
   public MangosteenResponse put(String key, Object value) {
     super.put(key, value);

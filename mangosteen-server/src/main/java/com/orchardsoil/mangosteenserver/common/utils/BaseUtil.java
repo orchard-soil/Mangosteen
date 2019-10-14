@@ -1,29 +1,65 @@
 package com.orchardsoil.mangosteenserver.common.utils;
 
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
+import com.orchardsoil.mangosteenserver.common.authentication.JWTUtil;
 import com.orchardsoil.mangosteenserver.common.domain.SystemConstant;
+import com.orchardsoil.mangosteenserver.common.function.CacheSelector;
+import com.orchardsoil.mangosteenserver.common.service.CacheService;
+import com.orchardsoil.mangosteenserver.core.model.User;
+import com.orchardsoil.mangosteenserver.core.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.shiro.SecurityUtils;
 
+import java.util.function.Supplier;
 import java.util.stream.IntStream;
 
 @Slf4j
 public class BaseUtil {
 
 
-//  /**
-//   * 获取当前操作用户
-//   *
-//   * @return 用户信息
-//   */
-//  public static User getCurrentUser() {
-//    String token = (String) SecurityUtils.getSubject().getPrincipal();
-//    String username = JWTUtil.getUsername(token);
-//    UserService userService = SpringContextUtil.getBean(UserService.class);
-//    CacheService cacheService = SpringContextUtil.getBean(CacheService.class);
-//
-//    return selectCacheByTemplate(() -> cacheService.getUser(username), () -> userService.findByName(username));
-//  }
+  /**
+   * 缓存查询模板
+   *
+   * @param cacheSelector    查询缓存的方法
+   * @param databaseSelector 数据库查询方法
+   * @return T
+   */
+  public static <T> T selectCacheByTemplate(CacheSelector<T> cacheSelector, Supplier<T> databaseSelector) {
+    try {
+      log.debug("query data from redis ······");
+      // 先查 Redis缓存
+      T t = cacheSelector.select();
+      if (t == null) {
+        // 没有记录再查询数据库
+        return databaseSelector.get();
+      } else {
+        return t;
+      }
+    } catch (Exception e) {
+      // 缓存查询出错，则去数据库查询
+      log.error("redis error：", e);
+      log.debug("query data from database ······");
+      return databaseSelector.get();
+    }
+  }
+
+  /**
+   * 获取当前操作用户
+   *
+   * @return 用户信息
+   */
+  public static User getCurrentUser() {
+    String token = (String) SecurityUtils.getSubject().getPrincipal();
+    String username = JWTUtil.getUsername(token);
+    UserService userService = SpringContextUtil.getBean(UserService.class);
+    CacheService cacheService = SpringContextUtil.getBean(CacheService.class);
+
+    return selectCacheByTemplate(
+        () -> cacheService.getUser(username),
+        () -> userService.findByName(username)
+    );
+  }
 
   /**
    * token 加密

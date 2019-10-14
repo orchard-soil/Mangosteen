@@ -29,3 +29,12 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### log ###
+log/
+
+
+### other ###
+mvnw*
+dump.rdb
+.mvn/*

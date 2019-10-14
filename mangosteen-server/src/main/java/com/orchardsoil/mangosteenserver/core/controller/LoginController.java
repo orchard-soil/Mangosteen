@@ -1,14 +1,18 @@
 package com.orchardsoil.mangosteenserver.core.controller;
 
+import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.google.code.kaptcha.impl.DefaultKaptcha;
 import com.orchardsoil.mangosteenserver.common.authentication.JWTToken;
 import com.orchardsoil.mangosteenserver.common.authentication.JWTUtil;
+import com.orchardsoil.mangosteenserver.common.domain.SystemConstant;
 import com.orchardsoil.mangosteenserver.common.entity.MangosteenResponse;
 import com.orchardsoil.mangosteenserver.common.exception.MangosteenException;
 import com.orchardsoil.mangosteenserver.common.properties.MangosteenProperties;
 import com.orchardsoil.mangosteenserver.common.utils.BaseUtil;
 import com.orchardsoil.mangosteenserver.common.utils.DateUtil;
 import com.orchardsoil.mangosteenserver.common.utils.MD5Util;
+import com.orchardsoil.mangosteenserver.core.manager.UserManager;
+import com.orchardsoil.mangosteenserver.core.mapper.UserMapper;
 import com.orchardsoil.mangosteenserver.core.model.User;
 import com.orchardsoil.mangosteenserver.core.service.UserService;
 import io.swagger.annotations.Api;
@@ -16,6 +20,7 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.catalina.startup.UserConfig;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -34,6 +39,7 @@ import java.io.ByteArrayOutputStream;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 @Slf4j
 @Validated
@@ -42,6 +48,8 @@ import java.util.Map;
 public class LoginController {
   @Autowired
   private UserService userService;
+  @Autowired
+  private UserManager userManager;
 
   @Autowired
   private MangosteenProperties properties;
@@ -61,6 +69,22 @@ public class LoginController {
   )
 //  @Limit(key = "login", period = 60, count = 20, name = "登录接口", prefix = "limit")
   public MangosteenResponse login(
+<<<<<<< HEAD
+      @NotBlank(message = "{required}") @RequestParam(value = "username") String username,
+      @NotBlank(message = "{required}") @RequestParam(value = "password") String password,
+      @NotBlank(message = "{required}") @RequestParam(value = "vrifyCode") String vrifyCode,
+      HttpServletRequest request) throws Exception {
+    // 从session 中获取验证码
+    String verificationCodeIn = (String) request.getSession().getAttribute("vrifyCode");
+    // 删除
+    request.getSession().removeAttribute("vrifyCode");
+    // 判断验证码是否正确
+//    if (StringUtils.isEmpty(vrifyCode) || StringUtils.isEmpty(verificationCodeIn) || !verificationCodeIn.equals(vrifyCode)) {
+//      throw new MangosteenException("验证码错误，或已失效");
+//    }
+    username = StringUtils.lowerCase(username);
+    password = MD5Util.encrypt(username, password);
+=======
       @RequestParam(value = "username") String username,
       @RequestParam(value = "password") String password,
       @RequestParam(value = "vrifyCode") String vrifyCode,
@@ -76,6 +100,7 @@ public class LoginController {
       }
       username = StringUtils.lowerCase(username);
       password = MD5Util.encrypt(username, password);
+>>>>>>> 1b02a976066a2fe4c0569ed163ee4f1e246391d7
 
       final String errorMessage = "用户名或密码错误";
       User user = this.userService.findByName(username);
@@ -155,6 +180,12 @@ public class LoginController {
   })
   @PostMapping("regist")
   public MangosteenResponse regist(
+<<<<<<< HEAD
+      @NotBlank(message = "账号不能为空") @RequestParam(value = "username") String username,
+      @NotBlank(message = "密码不能为空") @RequestParam(value = "password") String password) throws Exception {
+    this.userService.regist(username, password);
+    return new MangosteenResponse().message("用户注册成功").success();
+=======
       @RequestParam(value = "username", required = true) String username,
       @RequestParam(value = "password", required = true) String password) throws Exception {
     try {
@@ -180,6 +211,26 @@ public class LoginController {
     }catch (MangosteenException e){
       return new MangosteenResponse().message(e.getMessage()).fail();
     }
+>>>>>>> 1b02a976066a2fe4c0569ed163ee4f1e246391d7
+  }
+
+  private String saveTokenToRedis(User user, JWTToken token, HttpServletRequest request) throws Exception {
+//    String ip = IPUtil.getIpAddr(request);
+
+//    // 构建在线用户
+//    ActiveUser activeUser = new ActiveUser();
+//    activeUser.setUsername(user.getUsername());
+//    activeUser.setIp(ip);
+//    activeUser.setToken(token.getToken());
+//    activeUser.setLoginAddress(AddressUtil.getCityInfo(ip));
+
+    // zset 存储登录用户，score 为过期时间戳
+//    this.redisService.zadd(SystemConstant.ACTIVE_USERS_ZSET_PREFIX, Double.valueOf(token.getExipreAt()), mapper.writeValueAsString(activeUser));
+    // redis 中存储这个加密 token，key = 前缀 + 加密 token + .ip
+//    this.redisService.set(SystemConstant.TOKEN_CACHE_PREFIX + token.getToken() + StringPool.DOT + ip, token.getToken(), properties.getShiro().getJwtTimeOut() * 1000);
+
+//    return activeUser.getId();
+    return "";
   }
 
   /**
@@ -199,6 +250,16 @@ public class LoginController {
     Map<String, Object> userInfo = new HashMap<>();
     userInfo.put("token", token.getToken());
     userInfo.put("exipreTime", token.getExipreAt());
+
+    Set<String> roles = this.userManager.getUserRoles(username);
+    userInfo.put("roles", roles);
+//
+    Set<String> permissions = this.userManager.getUserPermissions(username);
+    userInfo.put("permissions", permissions);
+//
+//    UserConfig userConfig = this.userManager.getUserConfig(String.valueOf(user.getUserId()));
+//    userInfo.put("config", userConfig);
+
     user.setPassword("it's a secret");
     userInfo.put("user", user);
     return userInfo;

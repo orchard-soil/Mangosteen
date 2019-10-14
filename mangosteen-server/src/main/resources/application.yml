@@ -24,7 +24,27 @@ spring:
           password: ENC(mnl1c7Zuy0qzQuu9pvFDWOR/kHfIQqqyXgiVaMbUX947adR6VjWOVBUIVwCtbof+uFPsxgII2aI8pnetCwMgYg==)
           driver-class-name: com.mysql.cj.jdbc.Driver
           url: jdbc:mysql://127.0.0.1:3306/mangosteen?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+        online:
+          username: root
+          password: mangosteen
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://104.243.26.146:3306/mangosteen?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
 
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    jedis:
+      pool:
+        min-idle: 8
+        max-idle: 500
+        max-active: 2000
+        max-wait: 10000
+    timeout: 0
 
 #mybatis plus 设置
 mybatis-plus:
@@ -46,6 +66,10 @@ mangosteen:
         num: 1000
   shiro:
     # 后端免认证接口 url
+<<<<<<< HEAD
+    anonUrl: /druid/**,/login,/images/captcha,/logout/**,/regist,/user/check/**,/doc.html,/webjars/**,/swagger-resources,/v2/api-docs,/v2/api-docs-ext
+=======
     anonUrl: /druid/**,/login,/images/captcha,/logout/**,/regist,/user/check/**,/doc.html,/swagger-resources,/webjars/**,/v2/api-docs,/v2/api-docs-ext
+>>>>>>> 1b02a976066a2fe4c0569ed163ee4f1e246391d7
     # token有效期，单位秒
     jwtTimeOut: 3600000
