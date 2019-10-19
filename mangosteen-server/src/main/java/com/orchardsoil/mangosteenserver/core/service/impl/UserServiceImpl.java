@@ -4,10 +4,14 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.orchardsoil.mangosteenserver.common.exception.MangosteenException;
 import com.orchardsoil.mangosteenserver.common.utils.MD5Util;
+import com.orchardsoil.mangosteenserver.core.manager.UserManager;
 import com.orchardsoil.mangosteenserver.core.mapper.UserMapper;
+import com.orchardsoil.mangosteenserver.core.mapper.UserRoleMapper;
 import com.orchardsoil.mangosteenserver.core.model.User;
+import com.orchardsoil.mangosteenserver.core.model.UserRole;
 import com.orchardsoil.mangosteenserver.core.service.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,6 +23,11 @@ import java.util.List;
 @Service("userService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
+
+  @Autowired
+  private UserRoleMapper userRoleMapper;
+  @Autowired
+  private UserManager userManager;
 
   @Override
   public List<User> getUserLst() {
@@ -35,7 +44,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
   public void regist(String username, String password) throws Exception {
     // 先查询用户名是否存在
     List<User> temps = this.baseMapper.selectList(new LambdaQueryWrapper<User>().eq(User::getUsername, username));
-    if (temps.size() > 0 ) {
+    if (temps.size() > 0) {
       throw new MangosteenException("用户已存在");
     }
     User user = new User();
@@ -47,6 +56,14 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     user.setAvatar(User.DEFAULT_AVATAR);
     user.setDescription("注册用户");
     this.save(user);
+
+    UserRole ur = new UserRole();
+    ur.setUserId(user.getUserId());
+    ur.setRoleId(2L); // 注册用户角色 ID
+    this.userRoleMapper.insert(ur);
+
+    // 将用户相关信息保存到 Redis中
+    userManager.loadUserRedisCache(user);
   }
 
 }
