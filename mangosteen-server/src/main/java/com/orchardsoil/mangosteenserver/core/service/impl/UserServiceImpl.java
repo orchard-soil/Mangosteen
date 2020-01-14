@@ -24,46 +24,46 @@ import java.util.List;
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
 
-  @Autowired
-  private UserRoleMapper userRoleMapper;
-  @Autowired
-  private UserManager userManager;
+    @Autowired
+    private UserRoleMapper userRoleMapper;
+    @Autowired
+    private UserManager userManager;
 
-  @Override
-  public List<User> getUserLst() {
-    return this.baseMapper.selectList(new LambdaQueryWrapper<User>());
-  }
-
-  @Override
-  public User findByName(String username) {
-    return this.baseMapper.selectOne(new LambdaQueryWrapper<User>().eq(User::getUsername, username));
-  }
-
-  @Override
-  @Transactional
-  public void regist(String username, String password) throws Exception {
-    // 先查询用户名是否存在
-    List<User> temps = this.baseMapper.selectList(new LambdaQueryWrapper<User>().eq(User::getUsername, username));
-    if (temps.size() > 0) {
-      throw new MangosteenException("用户已存在");
+    @Override
+    public List<User> getUserLst() {
+        return this.baseMapper.selectList(new LambdaQueryWrapper<User>());
     }
-    User user = new User();
-    user.setPassword(MD5Util.encrypt(username, password));
-    user.setUsername(username);
-    user.setCreateTime(new Date());
-    user.setStatus(User.STATUS_VALID);
-    user.setSsex(User.SEX_UNKNOW);
-    user.setAvatar(User.DEFAULT_AVATAR);
-    user.setDescription("注册用户");
-    this.save(user);
 
-    UserRole ur = new UserRole();
-    ur.setUserId(user.getUserId());
-    ur.setRoleId(2L); // 注册用户角色 ID
-    this.userRoleMapper.insert(ur);
+    @Override
+    public User findByName(String username) {
+        return this.baseMapper.selectOne(new LambdaQueryWrapper<User>().eq(User::getUsername, username));
+    }
 
-    // 将用户相关信息保存到 Redis中
-    userManager.loadUserRedisCache(user);
-  }
+    @Override
+    @Transactional
+    public void regist(String username, String password) throws Exception {
+        // 先查询用户名是否存在
+        List<User> temps = this.baseMapper.selectList(new LambdaQueryWrapper<User>().eq(User::getUsername, username));
+        if (temps.size() > 0) {
+            throw new MangosteenException("用户已存在");
+        }
+        User user = new User();
+        user.setPassword(MD5Util.encrypt(username, password));
+        user.setUsername(username);
+        user.setCreateTime(new Date());
+        user.setStatus(User.STATUS_VALID);
+        user.setSsex(User.SEX_UNKNOW);
+        user.setAvatar(User.DEFAULT_AVATAR);
+        user.setDescription("注册用户");
+        this.save(user);
+
+        UserRole ur = new UserRole();
+        ur.setUserId(user.getUserId());
+        ur.setRoleId(2L); // 注册用户角色 ID
+        this.userRoleMapper.insert(ur);
+
+        // 将用户相关信息保存到 Redis中
+        userManager.loadUserRedisCache(user);
+    }
 
 }

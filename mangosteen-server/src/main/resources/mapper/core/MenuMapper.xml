@@ -30,7 +30,7 @@
     <select id="findUserMenus" resultMap="menu">
         select m.*
         from t_menu m
-        where m.type &lt;&gt; 1
+        where m.type &lt;&gt;
           and m.MENU_ID in
               (select distinct rm.menu_id
                from t_role_menu rm

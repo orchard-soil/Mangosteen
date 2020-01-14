@@ -67,6 +67,7 @@ public class CacheServiceImpl implements CacheService {
 
   @Override
   public List<Menu> getPermissions(String username) throws Exception {
+//    先从缓存中获取权限列表
     String permissionListString = this.redisService.get(SystemConstant.USER_PERMISSION_CACHE_PREFIX + username);
     if (StringUtils.isBlank(permissionListString)) {
       throw new Exception();

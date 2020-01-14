@@ -20,15 +20,15 @@ spring:
       datasource:
         # 数据源-1，名称为 primary
         primary:
-          username: ENC(bNVOqb7WKLX5Bjnw+LMv92taj25KOxDimXxILPQjw42wgv+1lHzOH8kr97xDwWdhpY67QuYCS7sWN4W46YbkFA==)
-          password: ENC(mnl1c7Zuy0qzQuu9pvFDWOR/kHfIQqqyXgiVaMbUX947adR6VjWOVBUIVwCtbof+uFPsxgII2aI8pnetCwMgYg==)
+          username: root
+          password: liuxin
           driver-class-name: com.mysql.cj.jdbc.Driver
           url: jdbc:mysql://127.0.0.1:3306/mangosteen?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-        online:
-          username: root
-          password: mangosteen
-          driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://104.243.26.146:3306/mangosteen?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+#        online:
+#          username: root
+#          password: mangosteen
+#          driver-class-name: com.mysql.cj.jdbc.Driver
+#          url: jdbc:mysql://104.243.26.200:3306/mangosteen?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
 
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
@@ -37,7 +37,7 @@ spring:
   redis:
     host: 127.0.0.1
     port: 6379
-    password:
+    password: liuxin
     jedis:
       pool:
         min-idle: 8
